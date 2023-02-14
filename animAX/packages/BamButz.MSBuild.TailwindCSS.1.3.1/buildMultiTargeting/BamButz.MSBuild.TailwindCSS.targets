@@ -1,0 +1,63 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <AvailableItemName Include="TailwindCSS" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <NodeCli Condition=" '$(NodeCli)'=='' ">npm</NodeCli>
+        <PostCssRunner Condition=" '$(PostCssRunner)'=='' ">run postcss --</PostCssRunner>
+        <PostCssCli Condition="('$(PostCssCli)'=='' Or '$(PostCssCli)'=='true')">-o</PostCssCli>
+    </PropertyGroup>
+
+    <Target Name="CheckIfNodeJSIsInstalled">
+        <PropertyGroup>
+            <!-- Send the output to null to keep the log clean -->
+            <NodeTestCommand Condition="$(OS) == Windows_NT">node -v &gt; NUL</NodeTestCommand>
+            <NodeTestCommand Condition="$(OS) != Windows_NT">node -v &gt; /dev/null</NodeTestCommand>
+        </PropertyGroup>
+
+        <Exec Command="$(NodeTestCommand)" IgnoreExitCode="true" EchoOff="true">
+            <Output TaskParameter="ExitCode" PropertyName="ExitCode" />
+        </Exec>
+
+        <Error Text="Node.js must be installed in order to generate tailwind css!" Condition="$(ExitCode) != 0" />
+    </Target>
+
+    <Target Name="InstallTailwindCSS" Inputs="$(MSBuildThisFileDirectory)../package.json"
+            Outputs="$(MSBuildThisFileDirectory)../package-lock.json"
+            BeforeTargets="Build;CompileTailwindCSS" >
+        <CallTarget Targets="CheckIfNodeJSIsInstalled" />
+
+        <Exec Command="$(NodeCli) install"
+              WorkingDirectory="$(MSBuildThisFileDirectory)../" />
+    </Target>
+
+    <Target Name="CompileTailwindCSS" Inputs="@(TailwindCSS);$(MSBuildProjectDirectory)/tailwind.config.js"
+            Outputs="@(TailwindCSS->'%(relativedir)%(Filename).min.css');$(MSBuildThisFileDirectory)../tailwind.config.js"
+            BeforeTargets="Build">
+        
+        <Message Text="Adding minimal TailwindCSS config to project -> $(MSBuildProjectDirectory)/tailwind.config.js"
+                 Condition="!Exists('$(MSBuildProjectDirectory)/tailwind.config.js')" Importance="High" />
+        <Copy SourceFiles="$(MSBuildThisFileDirectory)../tailwind.config.js.minimal"
+              DestinationFiles="$(MSBuildProjectDirectory)/tailwind.config.js"
+              Condition="!Exists('$(MSBuildProjectDirectory)/tailwind.config.js')" />
+
+        <Message Text="Copy: $(MSBuildProjectDirectory)/tailwind.config.js -> $(MSBuildThisFileDirectory)../tailwind.config.js" Importance="High" />
+        <Copy SourceFiles="$(MSBuildProjectDirectory)/tailwind.config.js"
+              DestinationFiles="$(MSBuildThisFileDirectory)../tailwind.config.js" />
+
+        <Message Text="PostCssCompile: Compiling %(TailwindCSS.FullPath)" Importance="high" />
+        <Exec
+            Command="$(NodeCli) $(PostCssRunner) &quot;%(TailwindCSS.FullPath)&quot; --config &quot;$(MSBuildThisFileDirectory)../&quot; $(PostCssCli) &quot;%(TailwindCSS.RootDir)%(TailwindCSS.Directory)%(TailwindCSS.Filename).min.css&quot;" 
+            WorkingDirectory="$(MSBuildThisFileDirectory)../" />
+    </Target>
+
+    <Target Name="TailwindCSSClean" BeforeTargets="Clean">
+        <Message Text="CompileTailwindCSS: Cleaning @(TailwindCSS->'%(relativedir)%(Filename).min.css')" Importance="high" />
+        <Delete Files="@(TailwindCSS->'%(relativedir)%(Filename).min.css')" />
+        <Message Text="CompileTailwindCSS: Cleaning $(MSBuildThisFileDirectory)../package-lock.json" Importance="high" />
+        <Delete Files="$(MSBuildThisFileDirectory)../package-lock.json" />
+        <Message Text="CompileTailwindCSS: Cleaning $(MSBuildThisFileDirectory)../tailwind.config.js" Importance="high" />
+        <Delete Files="$(MSBuildThisFileDirectory)../tailwind.config.js" />
+    </Target>
+</Project>
