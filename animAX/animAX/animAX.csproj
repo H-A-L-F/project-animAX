@@ -45,8 +45,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BamButz.MSBuild.TailwindCSS, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BamButz.MSBuild.TailwindCSS.1.3.1\lib\netstandard2.0\BamButz.MSBuild.TailwindCSS.dll</HintPath>
+    <Reference Include="Browser.Blob, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.Browser.Blob.1.1.0\lib\netstandard2.0\Browser.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="Browser.Dom, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.Browser.Dom.2.0.1\lib\netstandard2.0\Browser.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="Browser.Event, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.Browser.Event.1.2.1\lib\netstandard2.0\Browser.Event.dll</HintPath>
+    </Reference>
+    <Reference Include="Browser.WebStorage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.Browser.WebStorage.1.0.0\lib\netstandard2.0\Browser.WebStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Fable.AST, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.AST.3.0.0\lib\netstandard2.0\Fable.AST.dll</HintPath>
+    </Reference>
+    <Reference Include="Fable.Core, Version=3.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.Core.3.1.5\lib\netstandard2.0\Fable.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Fable.React, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fable.React.7.0.1\lib\netstandard2.0\Fable.React.dll</HintPath>
+    </Reference>
+    <Reference Include="Feliz, Version=1.32.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Feliz.1.32.0\lib\netstandard2.0\Feliz.dll</HintPath>
+    </Reference>
+    <Reference Include="Feliz.CompilerPlugins, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Feliz.CompilerPlugins.1.2.0\lib\netstandard2.0\Feliz.CompilerPlugins.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.7.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.7.2\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -216,9 +243,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\BamButz.MSBuild.TailwindCSS.1.3.1\build\BamButz.MSBuild.TailwindCSS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BamButz.MSBuild.TailwindCSS.1.3.1\build\BamButz.MSBuild.TailwindCSS.targets'))" />
   </Target>
-  <Import Project="..\packages\BamButz.MSBuild.TailwindCSS.1.3.1\build\BamButz.MSBuild.TailwindCSS.targets" Condition="Exists('..\packages\BamButz.MSBuild.TailwindCSS.1.3.1\build\BamButz.MSBuild.TailwindCSS.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Feliz.CompilerPlugins</name></assembly>
+<members>
+<member name="M:Feliz.ReactComponentAttribute.TransformCall(Fable.PluginHelper,Fable.AST.Fable.MemberFunctionOrValue,Fable.AST.Fable.Expr)">
+ <summary>Transforms call-site into createElement calls</summary>
+</member>
+<member name="T:Feliz.ReactComponentAttribute">
+ <summary>Transforms a function into a React function component. Make sure the function is defined at the module level</summary>
+</member>
+<member name="M:Feliz.HookAttribute.TransformCall(Fable.PluginHelper,Fable.AST.Fable.MemberFunctionOrValue,Fable.AST.Fable.Expr)">
+ <summary>Transforms call-site into createElement calls</summary>
+</member>
+<member name="T:Feliz.HookAttribute">
+ <summary>Applies to custom defined React hooks to ensure the generated code starts with "use" in order for fast-refresh to pick it up</summary>
+</member>
+</members>
+</doc>

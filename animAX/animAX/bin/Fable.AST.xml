@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Fable.AST</name></assembly>
+<members>
+<member name="T:Fable.AST.NumberKind">
+<summary>
+ Numbers that are represented with JS native number type
+</summary>
+</member>
+<member name="P:Fable.AST.SourceLocation.identifierName">
+<summary>
+ We added the display name here because it seemed to be used by Babel source map generation
+</summary>
+</member>
+<member name="T:Fable.AST.Position">
+<summary>
+ Each Position object consists of a line number (1-indexed) and a column number (0-indexed):
+</summary>
+</member>
+<member name="T:Fable.AST.Fable.Expr.Delegate">
+<summary>
+ Delegates are uncurried functions, can have none or multiple arguments
+</summary>
+</member>
+<member name="T:Fable.AST.Fable.Expr.Lambda">
+<summary>
+ Lambdas are curried, they always have a single argument (which can be unit)
+</summary>
+</member>
+<member name="P:Fable.AST.Fable.ReplaceCallInfo.SignatureArgTypes">
+<summary>
+ See ArgInfo.SignatureArgTypes
+</summary>
+</member>
+<member name="P:Fable.AST.Fable.CallInfo.SignatureArgTypes">
+<summary>
+ Argument types as defined in the method signature, this may be slightly different to types of actual argument expressions.
+ E.g.: signature accepts &apos;a-&gt;&apos;b-&gt;&apos;c (2-arity) but we pass int-&gt;int-&gt;int-&gt;int (3-arity)
+</summary>
+</member>
+<member name="P:Fable.AST.Fable.MemberDecl.ExportDefault">
+<summary>
+ This can only be set once per file
+ for a declaration in the root scope
+</summary>
+</member>
+<member name="T:Fable.AST.Fable.EntityPath.CoreAssemblyName">
+<summary>
+ Only used to reference entities in core assemblies without a path
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ExportAllDeclaration">
+<summary>
+ An export batch declaration, e.g., export * from &quot;mod&quot;;.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ExportDefaultDeclaration">
+<summary>
+ An export default declaration, e.g., export default function () {}; or export default 1;.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ExportNamedDeclaration">
+<summary>
+ An export named declaration, e.g., export {foo, bar};, export {foo} from &quot;mod&quot;; or export var foo = 1;.
+ Note: Having declaration populated with non-empty specifiers or non-null source results in an invalid state.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ExportSpecifier">
+<summary>
+ An exported variable binding, e.g., {foo} in export {foo} or {bar as foo} in export {bar as foo}.
+ The exported field refers to the name exported in the module.
+ The local field refers to the binding into the local module scope.
+ If it is a basic named export, such as in export {foo}, both exported and local are equivalent Identifier nodes;
+ in this case an Identifier node representing foo. If it is an aliased export, such as in export {bar as foo},
+ the exported field is an Identifier node representing foo, and the local field is an Identifier node representing bar.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ImportDeclaration">
+<summary>
+ e.g., import foo from &quot;mod&quot;;.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ImportNamespaceSpecifier">
+<summary>
+ A namespace import specifier, e.g., * as foo in import * as foo from &quot;mod&quot;.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ImportDefaultSpecifier">
+<summary>
+ A default import specifier, e.g., foo in import foo from &quot;mod&quot;.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ImportMemberSpecifier">
+<summary>
+ An imported variable binding, e.g., {foo} in import {foo} from &quot;mod&quot; or {foo as bar} in import {foo as bar} from &quot;mod&quot;.
+ The imported field refers to the name of the export imported from the module.
+ The local field refers to the binding imported into the local module scope.
+ If it is a basic named import, such as in import {foo} from &quot;mod&quot;, both imported and local are equivalent Identifier nodes; in this case an Identifier node representing foo.
+ If it is an aliased import, such as in import {foo as bar} from &quot;mod&quot;, the imported field is an Identifier node representing foo, and the local field is an Identifier node representing bar.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ClassExpression">
+<summary>
+ Anonymous class: e.g., var myClass = class { }
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ClassProperty">
+<summary>
+ ES Class Fields &amp; Static Properties
+ https://github.com/jeffmo/es-class-fields-and-static-properties
+ e.g, class MyClass { static myStaticProp = 5; myProp /* = 10 */; }
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.SequenceExpression">
+<summary>
+ A comma-separated sequence of expressions.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.CallExpression">
+<summary>
+ A function or method call expression.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ConditionalExpression">
+<summary>
+ A conditional expression, i.e., a ternary ?/: expression.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.MemberExpression">
+<summary>
+ If computed is true, the node corresponds to a computed (a[b]) member expression and property is an Expression.
+ If computed is false, the node corresponds to a static (a.b) member expression and property is an Identifier.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ArrowFunctionExpression">
+<summary>
+ A fat arrow function expression, e.g., let foo = (bar) =&gt; { /* body */ }.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Super">
+<summary>
+ A super pseudo-expression.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.FunctionDeclaration">
+<summary>
+ When passing a VariableDeclaration, the bound value must go through
+ the `right` parameter instead of `init` property in VariableDeclarator
+ When passing a VariableDeclaration, the bound value must go through
+ the `right` parameter instead of `init` property in VariableDeclarator
+ A function declaration. Note that id cannot be null.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.TryStatement">
+<summary>
+ If handler is null then finalizer must be a BlockStatement.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.CatchClause">
+<summary>
+ A catch clause following a try block.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.SwitchCase">
+<summary>
+ A case (if test is an Expression) or default (if test === null) clause in the body of a switch statement.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ContinueStatement">
+<summary>
+ Continue can optionally take a label of a loop to continue
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.BreakStatement">
+<summary>
+ Break can optionally take a label of a loop to break
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.LabeledStatement">
+<summary>
+ Statement (typically loop) prefixed with a label (for continue and break)
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.DebuggerStatement">
+<summary>
+ An empty statement, i.e., a solitary semicolon.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.BlockStatement">
+<summary>
+ A block statement, i.e., a sequence of statements surrounded by braces.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ExpressionStatement">
+<summary>
+ An expression statement, i.e., a statement consisting of a single expression.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Program">
+<summary>
+ A complete program source tree.
+ Parsers must specify sourceType as &quot;module&quot; if the source has been parsed as an ES6 module.
+ Otherwise, sourceType must be &quot;script&quot;.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Directive">
+<summary>
+ e.g. &quot;use strict&quot;;
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Identifier">
+<summary>
+ Note that an identifier may be an expression or a destructuring pattern.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.EmitExpression">
+<summary>
+ Not in Babel specs
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.ModuleDeclaration">
+<summary>
+ A module import or export declaration.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Declaration">
+<summary>
+ Note that declarations are considered statements; this is because declarations can appear in any statement context.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Expression">
+<summary>
+ Since the left-hand side of an assignment may be any expression in general, an expression can also be a pattern.
+</summary>
+</member>
+<member name="T:Fable.AST.Babel.Node">
+<summary>
+ The type field is a string representing the AST variant type.
+ Each subtype of Node is documented below with the specific string of its type field.
+ You can use this field to determine which interface a node implements.
+ The loc field represents the source location information of the node.
+ If the node contains no information about the source location, the field is null;
+ otherwise it is an object consisting of a start position (the position of the first character of the parsed source region)
+ and an end position (the position of the first character after the parsed source region):
+</summary>
+</member>
+<member name="M:Fable.AST.Babel.PrinterExtensions.Printer.ComplexExpressionWithParens(Fable.AST.Babel.Printer,Fable.AST.Babel.Expression,Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+<summary>
+ Surround with parens anything that can potentially conflict with operator precedence
+</summary>
+</member>
+</members>
+</doc>
