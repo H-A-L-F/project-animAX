@@ -255,4 +255,26 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
+
+  <!-- <ItemGroup>
+    <Content Include="package.json">
+      <PackagePath></PackagePath>
+    </Content>
+    <Content Include="postcss.config.js">
+      <PackagePath></PackagePath>
+    </Content>
+    <Content Include="tailwind.config.js.minimal">
+      <PackagePath></PackagePath>
+    </Content>
+    <Content Include="Targets\BamButz.MSBuild.TailwindCSS.targets">
+      <PackagePath>build</PackagePath>
+    </Content>
+    <Content Include="Targets\BamButz.MSBuild.TailwindCSS.targets">
+      <PackagePath>buildMultiTargeting</PackagePath>
+    </Content>
+  </ItemGroup> -->
+
+  <ItemGroup Condition="$(Configuration) == 'Debug'">
+    <TailwindCSS Include="Style/tailwind.scss" />
+  </ItemGroup>
 </Project>
