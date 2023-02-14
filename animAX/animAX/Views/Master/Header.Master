@@ -4,13 +4,32 @@
 
 <html>
 <head runat="server">
-    <title></title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>@ViewData["Title"] - Tailwind</title>
+    <meta name="author" content="name"/>
+    <meta name="description" content="description here"/>
+    <meta name="keywords" content="keywords,here"/>
+
+    <%--tailwind css--%>
+    <link rel="stylesheet" href="~/dist/output.css"/>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         Welcome to animAX
+
+        <h1 class="text-3xl font-bold underline">
+            Hello world!
+        </h1>
+
+        <div class="text-sm italic">
+            Small text
+        </div>
+
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

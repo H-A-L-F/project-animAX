@@ -35,4 +35,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <ItemGroup>
+    <Content Update="Views\Landing\WebForm1.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Update="Views\Master\Header.Master">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
 </Project>
