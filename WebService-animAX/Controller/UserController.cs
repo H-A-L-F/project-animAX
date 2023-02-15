@@ -24,7 +24,42 @@ namespace WebService_animAX.Controller
                 return "Please input all input!";
             }
             UserHandler.register(username, password, role);
-            return "";
+            return Status.SUCCESS.ToString();
+        }
+
+        public static string update(string id, string username, string role, string password)
+        {
+            if (id == "" || username == "" || role == "" || password == "")
+            {
+                return "Please fill all the fields!";
+            }
+
+            int intId;
+            try
+            {
+                intId = int.Parse(id);
+            }
+            catch (Exception e)
+            {
+                return "Id must be integer!";
+            }
+
+            UserHandler.update(intId, username, role, password);
+            return Status.SUCCESS.ToString();
+        }
+
+        public static bool remove(string id)
+        {
+            int temp = -1;
+            try
+            {
+                temp = int.Parse(id);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return UserHandler.remove(temp);
         }
     }
 }
