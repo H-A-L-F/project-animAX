@@ -18,5 +18,20 @@ namespace WebApp_animAX.Blocs
         {
 
         }
+
+        protected void createBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void updateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
