@@ -56,3 +56,10 @@ E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\obj
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\obj\Debug\WebService-animAX.csproj.CopyComplete
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\obj\Debug\WebService-animAX.dll
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\obj\Debug\WebService-animAX.pdb
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\obj\Debug\WebService-animAX.csproj.AssemblyReference.cache
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\bin\EntityFramework.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\bin\EntityFramework.SqlServer.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\bin\Newtonsoft.Json.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\bin\EntityFramework.xml
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\bin\EntityFramework.SqlServer.xml
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebService-animAX\bin\Newtonsoft.Json.xml
