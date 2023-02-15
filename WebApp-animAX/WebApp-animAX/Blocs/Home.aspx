@@ -17,6 +17,8 @@
         <br />
         <asp:Button ID="addCart" OnClick="addCart_Click" runat="server" Text="Add To Cart" />
         <br />
+        <asp:Label ID="lbCartError" runat="server" Text=""></asp:Label>
+        <br />
     </div>
 
     <div id="adminView" runat="server">

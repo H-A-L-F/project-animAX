@@ -79,5 +79,9 @@ namespace WebApp_animAX.Modules
             }
             return id;
         }
+
+        public static void addCart(Cart cart)
+        {
+        }
     }
 }

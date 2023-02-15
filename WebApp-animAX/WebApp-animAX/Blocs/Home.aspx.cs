@@ -22,7 +22,20 @@ namespace WebApp_animAX.Blocs
 
         protected void addCart_Click(object sender, EventArgs e)
         {
+            Models.Cart cart = new Models.Cart();
 
+            string resAnime = ws.showAnime(tbCartAnimeId.Text.ToString());
+            if(resAnime == null)
+            {
+                lbCartError.Text = "Invalid anime";
+            }
+            cart.anime = JsonConvert.DeserializeObject<Anime>(resAnime);
+
+            string resUser = ws.showUser(UserSession.getInstance().GetUserId(Request));
+            cart.user = JsonConvert.DeserializeObject<User>(resUser);
+
+            cart.animeId = int.Parse(tbCartAnimeId.Text.ToString());
+            cart.userId = int.Parse(UserSession.getInstance().GetUserId(Request));
         }
 
         protected void createBtn_Click(object sender, EventArgs e)

@@ -85,7 +85,7 @@ namespace WebService_animAX
         public string showAnime(string aid)
         {
             Anime anime = AnimeController.Show(aid);
-            return serealize<Anime>(anime);
+            return serealize(anime);
         }
 
         [WebMethod]
