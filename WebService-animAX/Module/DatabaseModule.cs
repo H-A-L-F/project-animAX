@@ -7,7 +7,7 @@ namespace WebService_animAX.Module
 {
     public class DatabaseModule
     {
-        public static ServiceDatabaseEntities db;
+        private static ServiceDatabaseEntities db;
 
         public static ServiceDatabaseEntities GetDbInstance()
         {

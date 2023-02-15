@@ -91,7 +91,7 @@ namespace WebService_animAX
         [WebMethod]
         public string getUserList()
         {
-            return serealize<List<User>>(UserController.Get());
+            return serealize(UserController.Get());
         }
 
         [WebMethod]

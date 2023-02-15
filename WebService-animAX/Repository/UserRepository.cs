@@ -50,7 +50,7 @@ namespace WebService_animAX.Repository
         public static List<User> Get()
         {
             ServiceDatabaseEntities db = new ServiceDatabaseEntities();
-            List<User> userList = (from data in db.Users select data).ToList<User>();
+            List<User> userList = (from data in db.Users select data).ToList();
             return userList;
 
         }
