@@ -9,6 +9,8 @@ namespace WebApp_animAX.Blocs
 {
     public partial class Subscriptions : System.Web.UI.Page
     {
+        private localhost.WebService ws;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

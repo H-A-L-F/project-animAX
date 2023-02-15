@@ -12,12 +12,11 @@ namespace WebApp_animAX.Blocs
 {
     public partial class ManageUser : System.Web.UI.Page
     {
-        private localhost.WebService ws;
+        private localhost.WebService ws = WebService.getInstance();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             CheckAdmin();
-            ws = new localhost.WebService();
             string res = ws.getUserList();
             List<User> userList = JsonConvert.DeserializeObject<List<User>>(res);
             userGv.DataSource = userList;

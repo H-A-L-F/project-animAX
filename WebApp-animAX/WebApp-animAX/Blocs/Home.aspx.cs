@@ -12,10 +12,9 @@ namespace WebApp_animAX.Blocs
 {
     public partial class Home : System.Web.UI.Page
     {
-        private localhost.WebService ws;
+        private localhost.WebService ws = WebService.getInstance();
         protected void Page_Load(object sender, EventArgs e)
         {
-            InitiateData();
             CheckAdminView();
             CheckUserView();
             loadAnimeData();
@@ -82,11 +81,6 @@ namespace WebApp_animAX.Blocs
                 animeGv.DataSource = gameList;
                 animeGv.DataBind();
             }
-        }
-
-        private void InitiateData()
-        {
-            ws = new localhost.WebService();
         }
 
         private void CheckAdminView()

@@ -10,6 +10,7 @@ namespace WebApp_animAX.Blocs
 {
     public partial class Cart : System.Web.UI.Page
     {
+        private localhost.WebService ws = WebService.getInstance();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,7 +18,6 @@ namespace WebApp_animAX.Blocs
 
         protected void buyBtn_Click(object sender, EventArgs e)
         {
-            localhost.WebService ws = WebService.getInstance();
             string userId = UserSession.getInstance().GetUserId(Request);
             //ws.createTransaction(userId);
         }

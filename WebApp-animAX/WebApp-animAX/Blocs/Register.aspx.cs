@@ -9,6 +9,8 @@ namespace WebApp_animAX.Blocs
 {
     public partial class Register : System.Web.UI.Page
     {
+        private localhost.WebService ws;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,7 +18,6 @@ namespace WebApp_animAX.Blocs
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            localhost.WebService ws = new localhost.WebService();
             string txt = ws.register(txtName.Text.Trim(), txtPassword.Text.Trim(), "");
             if (txt != "")
             {
