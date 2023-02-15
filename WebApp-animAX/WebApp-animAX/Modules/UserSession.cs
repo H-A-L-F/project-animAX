@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebApp_animAX.Models;
+using Newtonsoft.Json;
 
 namespace WebApp_animAX.Modules
 {
@@ -12,6 +13,7 @@ namespace WebApp_animAX.Modules
         public string roleCookies = "user_cookie";
         public string uidCookies = "user_id_cookie";
         public string id = "";
+        public string cart = "";
 
         public static UserSession instance;
         private UserSession()
@@ -80,8 +82,21 @@ namespace WebApp_animAX.Modules
             return id;
         }
 
-        public static void addCart(Cart cart)
+        public void addCart(HttpResponse Response, Cart cart)
         {
+            HttpCookie cookie = new HttpCookie(this.cart);
+            cookie.Value = serealize(cart);
+            cookie.Expires = DateTime.Now.AddHours(5);
+            Response.Cookies.Add(cookie);
+            this.cart = serealize(cart);
+        }
+
+        public string serealize<T>(T p)
+        {
+            return JsonConvert.SerializeObject(p, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
     }
 }

@@ -36,6 +36,8 @@ namespace WebApp_animAX.Blocs
 
             cart.animeId = int.Parse(tbCartAnimeId.Text.ToString());
             cart.userId = int.Parse(UserSession.getInstance().GetUserId(Request));
+
+            UserSession.getInstance().addCart(Response, cart);
         }
 
         protected void createBtn_Click(object sender, EventArgs e)
