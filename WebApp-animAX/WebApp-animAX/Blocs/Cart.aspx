@@ -5,5 +5,5 @@
     <asp:GridView id="gvCart" runat="server"></asp:GridView>
     <asp:Label ID="lbError" runat="server" Text=""></asp:Label>
     <br />
-    <asp:Button runat="server" Text="Buy" ID="buyBtn" OnClick="buyBtn_Click" />
+    <asp:Button runat="server" Text="Subscribe" ID="buyBtn" OnClick="buyBtn_Click" />
 </asp:Content>

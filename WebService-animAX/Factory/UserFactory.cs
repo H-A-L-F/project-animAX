@@ -13,7 +13,7 @@ namespace WebService_animAX.Factory
             ServiceDatabaseEntities db = DatabaseModule.GetDbInstance();
             User user = new User();
 
-            string currRole = role == "" ? "Member" : role;
+            string currRole = role == "" ? "Guest" : role;
             user.Role = currRole;
 
             user.Username = username;
