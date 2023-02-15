@@ -12,6 +12,9 @@
         <asp:Label ID="lbCartAnimeId" runat="server" Text="ID Anime"></asp:Label>
         <asp:TextBox ID="tbCartAnimeId" runat="server"></asp:TextBox>
         <br />
+        <asp:Label ID="lbCartAnimeQuantity" runat="server" Text="Quantity"></asp:Label>
+        <asp:TextBox ID="tbCartAnimeQuantity" runat="server"></asp:TextBox>
+        <br />
         <asp:Button ID="addCart" OnClick="addCart_Click" runat="server" Text="Add To Cart" />
         <br />
     </div>
