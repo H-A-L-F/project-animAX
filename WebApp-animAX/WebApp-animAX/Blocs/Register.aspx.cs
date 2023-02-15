@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_animAX.Modules;
 
 namespace WebApp_animAX.Blocs
 {
     public partial class Register : System.Web.UI.Page
     {
-        private localhost.WebService ws;
+        private localhost.WebService ws = WebService.getInstance();
 
         protected void Page_Load(object sender, EventArgs e)
         {
