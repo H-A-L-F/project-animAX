@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using WebService_animAX.Controller;
+using Newtonsoft.Json;
 
 namespace WebService_animAX
 {
@@ -18,9 +20,23 @@ namespace WebService_animAX
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public string login(string username, string password)
         {
-            return "Hello World";
+            User user = UserController.login(username, password);
+
+            if (user == null)
+                return "Login error";
+
+
+            return serealize<User>(user);
+        }
+
+        public string serealize<T>(T p)
+        {
+            return JsonConvert.SerializeObject(p, Formatting.None, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
         }
     }
 }
