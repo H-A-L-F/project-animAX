@@ -37,6 +37,32 @@ namespace WebService_animAX
             return UserController.register(username, password, role);
         }
 
+        [WebMethod]
+        public string createAnime(string title, string price)
+        {
+            return AnimeController.create(title, price);
+        }
+
+        [WebMethod]
+        public string updateAnime(int id, string title, string price)
+        {
+            return AnimeController.update(id, title, price);
+        }
+
+        [WebMethod]
+        public bool removeGame(int id)
+        {
+            return AnimeController.remove(id);
+        }
+
+        [WebMethod]
+        public string getAnime()
+        {
+            List<Anime> gameList = AnimeController.get();
+
+            return serealize<List<Anime>>(gameList);
+        }
+
         public string serealize<T>(T p)
         {
             return JsonConvert.SerializeObject(p, Formatting.None, new JsonSerializerSettings()
