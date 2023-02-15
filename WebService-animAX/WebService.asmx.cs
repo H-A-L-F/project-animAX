@@ -38,6 +38,18 @@ namespace WebService_animAX
         }
 
         [WebMethod]
+        public string updateUser(string id, string username, string role, string email, string password)
+        {
+            return UserController.update(id, username, role, password);
+        }
+
+        [WebMethod]
+        public bool removeUser(string id)
+        {
+            return UserController.remove(id);
+        }
+
+        [WebMethod]
         public string createAnime(string title, string price)
         {
             return AnimeController.create(title, price);
