@@ -7,5 +7,13 @@ namespace WebService_animAX.Controller
 {
     public class UserController
     {
+        public static User login(string username, string password)
+        {
+            if (username.Equals("") || password.Equals(""))
+            {
+                return null;
+            }
+            return UserHandler.login(username, password);
+        }
     }
 }
