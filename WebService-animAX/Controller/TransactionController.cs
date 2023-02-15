@@ -34,24 +34,27 @@ namespace WebService_animAX.Controller
             string headerId = createHeader(int.Parse(uid));
 
             int tid;
+            int intAid;
+            int intQuantity;
             try
             {
                 tid = int.Parse(headerId);
+                intAid = int.Parse(aid);
+                intQuantity = int.Parse(quantity);
             } catch
             {
                 return "Invalid headerId";
             }
 
-            return createDetail(tid, aid, quantity);
+            return createDetail(tid, intAid, intQuantity);
         }
 
         public static string createHeader(int userId)
         {
-            TransactionHandler.InsertHeader(userId);
-            return Status.SUCCESS.ToString();
+            return TransactionHandler.InsertHeader(userId).Id.ToString();
         }
 
-        public static string createDetail(int tid, string aid, string quantity)
+        public static string createDetail(int tid, int aid, int quantity)
         {
             TransactionHandler.InsertDetail(tid, aid, quantity);
             return Status.SUCCESS.ToString();
