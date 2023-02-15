@@ -13,5 +13,10 @@ namespace WebApp_animAX.Blocs
         {
 
         }
+
+        protected void addCart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
