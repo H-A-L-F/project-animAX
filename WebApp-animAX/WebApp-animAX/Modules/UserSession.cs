@@ -13,6 +13,7 @@ namespace WebApp_animAX.Modules
         public string roleCookies = "user_cookie";
         public string uidCookies = "user_id_cookie";
         public string id = "";
+        public string cartCookies = "cart_cookie";
         public string cart = "";
 
         public static UserSession instance;
@@ -84,11 +85,20 @@ namespace WebApp_animAX.Modules
 
         public void addCart(HttpResponse Response, Cart cart)
         {
-            HttpCookie cookie = new HttpCookie(this.cart);
+            HttpCookie cookie = new HttpCookie(cartCookies);
             cookie.Value = serealize(cart);
             cookie.Expires = DateTime.Now.AddHours(5);
             Response.Cookies.Add(cookie);
             this.cart = serealize(cart);
+        }
+
+        public string getCart(HttpRequest request)
+        {
+            if(request.Cookies[cart] != null)
+            {
+                cart = request.Cookies[cartCookies].Value;
+            }
+            return cart;
         }
 
         public string serealize<T>(T p)
