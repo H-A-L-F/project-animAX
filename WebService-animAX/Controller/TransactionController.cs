@@ -7,7 +7,7 @@ namespace WebService_animAX.Controller
 {
     public class TransactionController
     {
-        public static string validation(string uid)
+        public static string validation(string uid, string aid, string quantity)
         {
             int intUid;
             try
@@ -22,38 +22,38 @@ namespace WebService_animAX.Controller
             return Status.SUCCESS.ToString();
         }
 
-        public static string create(string uid)
+        public static string create(string uid, string aid, string quantity)
         {
-            string status = validation(uid);
+            string status = validation(uid, aid, quantity);
             if (status != Status.SUCCESS.ToString())
             {
                 return status;
             }
-            return createHeader(int.Parse(uid));
+            
+            string headerId = createHeader(int.Parse(uid));
+
+            int tid;
+            try
+            {
+                tid = int.Parse(headerId);
+            } catch
+            {
+                return "Invalid headerId";
+            }
+
+            return createDetail(tid, aid, quantity);
         }
 
         public static string createHeader(int userId)
         {
             TransactionHandler.InsertHeader(userId);
-            return "";
+            return Status.SUCCESS.ToString();
         }
 
-        public static string createDetail(string headerId, string gameId)
+        public static string createDetail(int tid, string aid, string quantity)
         {
-            int headerIntId = -1;
-            int gameIntId = -1;
-            try
-            {
-                headerIntId = int.Parse(headerId);
-                gameIntId = int.Parse(gameId);
-            }
-            catch (Exception e)
-            {
-                return "Please input a validation!";
-            }
-
-            TransactionHandler.InsertDetail(headerIntId, gameIntId);
-            return "";
+            TransactionHandler.InsertDetail(tid, aid, quantity);
+            return Status.SUCCESS.ToString();
         }
     }
 }

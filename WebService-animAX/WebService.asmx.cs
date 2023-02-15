@@ -68,9 +68,9 @@ namespace WebService_animAX
         }
 
         [WebMethod]
-        public string createTransaction(int uid)
+        public string createTransaction(string uid, string aid, string quantity)
         {
-            return TransactionController.create(uid);
+            return TransactionController.create(uid, aid, quantity);
         }
 
         [WebMethod]
