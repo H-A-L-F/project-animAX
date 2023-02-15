@@ -68,6 +68,12 @@ namespace WebService_animAX
         }
 
         [WebMethod]
+        public string createTransaction(int uid)
+        {
+            return TransactionController.create(uid);
+        }
+
+        [WebMethod]
         public string getAnime()
         {
             List<Anime> gameList = AnimeController.get();
