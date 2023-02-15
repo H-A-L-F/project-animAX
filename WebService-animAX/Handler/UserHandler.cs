@@ -26,6 +26,11 @@ namespace WebService_animAX.Handler
             return UserRepository.remove(id);
         }
 
+        public static User Show(int userId)
+        {
+            return UserRepository.Show(userId);
+        }
+
         public static List<User> Get()
         {
             return UserRepository.Get();

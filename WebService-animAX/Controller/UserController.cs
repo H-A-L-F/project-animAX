@@ -62,6 +62,20 @@ namespace WebService_animAX.Controller
             return UserHandler.remove(temp);
         }
 
+        public static User Show(string userId)
+        {
+            int userIntId = -1;
+            try
+            {
+                userIntId = int.Parse(userId);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            return UserHandler.Show(userIntId);
+        }
+
         public static List<User> Get()
         {
             return UserHandler.Get();
