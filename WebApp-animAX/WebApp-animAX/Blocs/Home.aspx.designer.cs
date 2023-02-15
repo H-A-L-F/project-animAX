@@ -51,6 +51,24 @@ namespace WebApp_animAX.Blocs
         protected global::System.Web.UI.WebControls.TextBox tbCartAnimeId;
 
         /// <summary>
+        /// lbCartAnimeQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbCartAnimeQuantity;
+
+        /// <summary>
+        /// tbCartAnimeQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbCartAnimeQuantity;
+
+        /// <summary>
         /// addCart control.
         /// </summary>
         /// <remarks>

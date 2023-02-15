@@ -42,7 +42,7 @@ namespace WebApp_animAX
 
         protected void transactionBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Subscriptions.aspx");
+            Response.Redirect("Transaction.aspx");
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
