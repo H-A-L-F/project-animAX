@@ -16,32 +16,32 @@ namespace WebApp_animAX
 
         protected void homeBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Blocs/Home.aspx");
+            Response.Redirect("Home.aspx");
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Blocs/Login.aspx");
+            Response.Redirect("Login.aspx");
         }
 
         protected void registerBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Blocs/Register.aspx");
+            Response.Redirect("Register.aspx");
         }
 
         protected void manageBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Blocs/ManageUser.aspx");
+            Response.Redirect("ManageUser.aspx");
         }
 
         protected void cartBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Blocs/Cart.aspx");
+            Response.Redirect("Cart.aspx");
         }
 
         protected void transactionBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./Blocs/Subscriptions.aspx");
+            Response.Redirect("Subscriptions.aspx");
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
