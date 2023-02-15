@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebService_animAX.Factory;
+using WebService_animAX.Module;
 
 namespace WebService_animAX.Repository
 {
     public class UserRepository
     {
+        private static ServiceDatabaseEntities db = DatabaseModule.GetDbInstance();
         public static User login(string username, string password)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             User u = (from data in db.Users
                       where data.Username.Equals(username) &&
                 data.Password.Equals(password)
@@ -25,7 +26,6 @@ namespace WebService_animAX.Repository
 
         public static void update(int id, string username, string role, string password)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
 
             User user = db.Users.Find(id);
             if (user == null) return;
@@ -39,7 +39,6 @@ namespace WebService_animAX.Repository
 
         public static bool remove(int id)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             User user = db.Users.Find(id);
             if (user == null) return false;
             db.Users.Remove(user);
@@ -49,14 +48,12 @@ namespace WebService_animAX.Repository
 
         public static List<User> Get()
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             List<User> userList = (from data in db.Users select data).ToList();
             return userList;
 
         }
         public static User Show(int userId)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             User user = (from data in db.Users select data).Where(c => c.Id == userId).FirstOrDefault<User>();
             return user;
         }

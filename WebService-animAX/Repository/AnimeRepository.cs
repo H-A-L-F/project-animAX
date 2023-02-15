@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebService_animAX.Factory;
+using WebService_animAX.Module;
 
 namespace WebService_animAX.Repository
 {
     public class AnimeRepository
     {
+        private static ServiceDatabaseEntities db = DatabaseModule.GetDbInstance();
         public static void create(string name, string price)
         {
             AnimeFactory.Create(name, price);
@@ -15,7 +17,6 @@ namespace WebService_animAX.Repository
 
         public static void update(int id, string name, string price)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             Anime anime = db.Animes.Find(id);
             if (anime == null) return;
             anime.Title = name;
@@ -25,7 +26,6 @@ namespace WebService_animAX.Repository
 
         public static bool remove(int id)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             Anime anime = db.Animes.Find(id);
             if (anime == null) return false;
             db.Animes.Remove(anime);
@@ -35,15 +35,12 @@ namespace WebService_animAX.Repository
 
         public static Anime Show(int id)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             Anime anime = (from data in db.Animes select data).Where(c => c.Id == id).FirstOrDefault<Anime>();
             return anime;
         }
 
         public static List<Anime> get()
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
-
             Anime anime = (from data in db.Animes select data).FirstOrDefault();
             //System.Diagnostics.Debug.WriteLine("First Anime : ", anime.Title);
             List<Anime> aniList = (from data in db.Animes select data).ToList<Anime>();
