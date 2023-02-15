@@ -59,3 +59,6 @@ E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.dll
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.pdb
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.AssemblyReference.cache
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Microsoft.Owin.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Owin.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Microsoft.Owin.xml
