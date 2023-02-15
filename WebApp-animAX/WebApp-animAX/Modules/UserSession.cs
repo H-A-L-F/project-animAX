@@ -70,5 +70,14 @@ namespace WebApp_animAX.Modules
             }
             return role;
         }
+
+        public string GetUserId(HttpRequest Request)
+        {
+            if (Request.Cookies[uidCookies] != null)
+            {
+                id = Request.Cookies[uidCookies].Value;
+            }
+            return id;
+        }
     }
 }

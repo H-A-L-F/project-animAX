@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_animAX.Modules;
 
 namespace WebApp_animAX.Blocs
 {
@@ -12,6 +13,13 @@ namespace WebApp_animAX.Blocs
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void buyBtn_Click(object sender, EventArgs e)
+        {
+            localhost.WebService ws = new localhost.WebService();
+            string userId = UserSession.getInstance().GetUserId(Request);
+            //ws.createTransaction(userId);
         }
     }
 }
