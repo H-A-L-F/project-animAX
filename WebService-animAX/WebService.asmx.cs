@@ -31,6 +31,12 @@ namespace WebService_animAX
             return serealize<User>(user);
         }
 
+        [WebMethod]
+        public string register(string username, string password, string role)
+        {
+            return UserController.register(username, password, role);
+        }
+
         public string serealize<T>(T p)
         {
             return JsonConvert.SerializeObject(p, Formatting.None, new JsonSerializerSettings()

@@ -12,5 +12,9 @@ namespace WebService_animAX.Handler
         {
             return UserRepository.login(username, password);
         }
+        public static void register(string username, string password, string role)
+        {
+            UserRepository.register(username, password, role);
+        }
     }
 }

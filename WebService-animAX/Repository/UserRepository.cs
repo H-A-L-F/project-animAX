@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebService_animAX.Factory;
 
 namespace WebService_animAX.Repository
 {
@@ -15,6 +16,11 @@ namespace WebService_animAX.Repository
                 data.Password.Equals(password)
                       select data).FirstOrDefault();
             return u;
+        }
+
+        public static void register(string username, string password, string role)
+        {
+            UserFactory.Create(username, password, role);
         }
     }
 }

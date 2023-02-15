@@ -16,5 +16,15 @@ namespace WebService_animAX.Controller
             }
             return UserHandler.login(username, password);
         }
+
+        public static string register(string username, string password, string role)
+        {
+            if (username.Equals("") || password.Equals(""))
+            {
+                return "Please input all input!";
+            }
+            UserHandler.register(username, password, role);
+            return "";
+        }
     }
 }
