@@ -20,11 +20,11 @@ namespace WebApp_animAX.Blocs
         }
         private void SetData()
         {
-            //Report.CrystalReport4 report = new Report.CrystalReport4();
+            Report.CrystalReport4 report = new Report.CrystalReport4();
 
-            //CrystalReportViewer1.ReportSource = report;
+            CrystalReportViewer1.ReportSource = report;
             Dataset.DataSet data = GetData();
-            //report.SetDataSource(data);
+            report.SetDataSource(data);
         }
 
         private Dataset.DataSet GetData()
