@@ -7,16 +7,11 @@ namespace WebApp_animAX.Modules
 {
     public class WebService
     {
-        private static WebService instance;
+        private static localhost.WebService instance;
 
-        private WebService()
+        public static localhost.WebService getInstance()
         {
-
-        }
-
-        public static WebService getInstance()
-        {
-            if (instance == null) instance = new WebService();
+            if (instance == null) instance = new localhost.WebService();
             return instance;
         }
     }
