@@ -1,3 +1,4 @@
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.CoreCompileInputs.cache
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\WebApp-animAX.dll.config
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\WebApp-animAX.dll
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\WebApp-animAX.pdb
@@ -51,9 +52,9 @@ E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\roslyn\VBCSCompiler.exe
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\roslyn\VBCSCompiler.exe.config
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Newtonsoft.Json.dll
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Newtonsoft.Json.xml
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.AssemblyReference.cache
-E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.CoreCompileInputs.cache
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.CopyComplete
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.dll
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.pdb

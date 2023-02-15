@@ -35,7 +35,7 @@ namespace WebApp_animAX.localhost {
         
         /// <remarks/>
         public WebService() {
-            this.Url = global::WebApp_animAX.Properties.Settings.Default.WebApp_animAX_localhost1_WebService;
+            this.Url = global::WebApp_animAX.Properties.Settings.Default.WebApp_animAX_localhost_WebService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
