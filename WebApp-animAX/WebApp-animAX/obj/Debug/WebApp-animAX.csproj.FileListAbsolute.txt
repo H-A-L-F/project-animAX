@@ -58,3 +58,4 @@ E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.CopyComplete
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.dll
 E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.pdb
+E:\Codes\PostTraining\PatternSoftwareDesign\project-animAX\WebApp-animAX\WebApp-animAX\obj\Debug\WebApp-animAX.csproj.AssemblyReference.cache
