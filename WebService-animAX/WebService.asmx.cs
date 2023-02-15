@@ -38,7 +38,7 @@ namespace WebService_animAX
         }
 
         [WebMethod]
-        public string updateUser(string id, string username, string role, string email, string password)
+        public string updateUser(string id, string username, string role, string password)
         {
             return UserController.update(id, username, role, password);
         }

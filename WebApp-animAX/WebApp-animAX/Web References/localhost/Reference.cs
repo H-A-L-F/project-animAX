@@ -203,23 +203,22 @@ namespace WebApp_animAX.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string updateUser(string id, string username, string role, string email, string password) {
+        public string updateUser(string id, string username, string role, string password) {
             object[] results = this.Invoke("updateUser", new object[] {
                         id,
                         username,
                         role,
-                        email,
                         password});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void updateUserAsync(string id, string username, string role, string email, string password) {
-            this.updateUserAsync(id, username, role, email, password, null);
+        public void updateUserAsync(string id, string username, string role, string password) {
+            this.updateUserAsync(id, username, role, password, null);
         }
         
         /// <remarks/>
-        public void updateUserAsync(string id, string username, string role, string email, string password, object userState) {
+        public void updateUserAsync(string id, string username, string role, string password, object userState) {
             if ((this.updateUserOperationCompleted == null)) {
                 this.updateUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateUserOperationCompleted);
             }
@@ -227,7 +226,6 @@ namespace WebApp_animAX.localhost {
                         id,
                         username,
                         role,
-                        email,
                         password}, this.updateUserOperationCompleted, userState);
         }
         
