@@ -23,9 +23,9 @@ namespace WebService_animAX.Handler
             return TransactionRepository.GetDetail(tid);
         }
 
-        public static void InsertDetail(int tid, int aid)
+        public static void InsertDetail(int tid, int aid, int quantity)
         {
-            TransactionRepository.InsertDetail(tid, aid);
+            TransactionRepository.InsertDetail(tid, aid, quantity);
         }
     }
 }

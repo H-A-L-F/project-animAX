@@ -20,12 +20,13 @@ namespace WebService_animAX.Factory
             return transaction;
         }
 
-        public static void CreateDetail(int tid, int aid)
+        public static void CreateDetail(int tid, int aid, int quantity)
         {
             ServiceDatabaseEntities db = new ServiceDatabaseEntities();
             TransactionDetail detail = new TransactionDetail();
             detail.AnimeId = aid;
             detail.TransactionId = tid;
+            detail.Quantity = quantity;
             db.TransactionDetails.Add(detail);
             db.SaveChanges();
         }

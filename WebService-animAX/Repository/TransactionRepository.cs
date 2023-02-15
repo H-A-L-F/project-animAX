@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebService_animAX.Factory;
 
 namespace WebService_animAX.Repository
 {
@@ -26,9 +27,9 @@ namespace WebService_animAX.Repository
             return detailList;
         }
 
-        public static void InsertDetail(int headerId, int gameId)
+        public static void InsertDetail(int tid, int aid, int quantity)
         {
-            TransactionFactory.CreateDetail(headerId, gameId);
+            TransactionFactory.CreateDetail(tid, aid, quantity);
         }
     }
 }
