@@ -17,7 +17,7 @@ namespace WebApp_animAX.Blocs
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             localhost.WebService ws = new localhost.WebService();
-            string txt = ws.register(txtEmail.Text.Trim(), txtName.Text.Trim(), txtPassword.Text.Trim(), "");
+            string txt = ws.register(txtName.Text.Trim(), txtPassword.Text.Trim(), "");
             if (txt != "")
             {
                 lblError.Text = txt;

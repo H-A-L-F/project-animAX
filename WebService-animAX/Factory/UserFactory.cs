@@ -10,7 +10,7 @@ namespace WebService_animAX.Factory
     {
         public static void Create(string username, string password, string role)
         {
-            ServiceDatabaseEntities db = DatabaseModule.getDbInstance();
+            ServiceDatabaseEntities db = DatabaseModule.GetDbInstance();
             User user = new User();
 
             string currRole = role == "" ? "Member" : role;
