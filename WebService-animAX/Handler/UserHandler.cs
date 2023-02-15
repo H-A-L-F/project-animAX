@@ -16,5 +16,14 @@ namespace WebService_animAX.Handler
         {
             UserRepository.register(username, password, role);
         }
+        public static void update(int id, string username, string role, string password)
+        {
+            UserRepository.update(id, username, role, password);
+        }
+
+        public static bool remove(int id)
+        {
+            return UserRepository.remove(id);
+        }
     }
 }
