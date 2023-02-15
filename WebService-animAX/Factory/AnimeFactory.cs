@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebService_animAX.Module;
 
 namespace WebService_animAX.Factory
 {
@@ -9,7 +10,7 @@ namespace WebService_animAX.Factory
     {
         public static void Create(string title, string price)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
+            ServiceDatabaseEntities db = DatabaseModule.GetDbInstance();
             Anime anime = new Anime();
             anime.Title = title;
             anime.SubscriptionPrice = int.Parse(price);
