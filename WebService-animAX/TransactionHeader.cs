@@ -12,20 +12,20 @@ namespace WebService_animAX
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class TransactionHeader
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public TransactionHeader()
         {
-            this.TransactionHeaders = new HashSet<TransactionHeader>();
+            this.TransactionDetails = new HashSet<TransactionDetail>();
         }
     
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
+        public int UserId { get; set; }
+        public System.DateTime Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TransactionHeader> TransactionHeaders { get; set; }
+        public virtual ICollection<TransactionDetail> TransactionDetails { get; set; }
+        public virtual User User { get; set; }
     }
 }

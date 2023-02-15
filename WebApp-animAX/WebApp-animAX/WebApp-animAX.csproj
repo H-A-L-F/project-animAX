@@ -155,6 +155,10 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\Anime.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\TransactionDetail.cs" />
+    <Compile Include="Models\TransactionHeader.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Modules\UserSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -26,5 +26,8 @@ namespace WebService_animAX
         }
     
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Anime> Animes { get; set; }
+        public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
+        public virtual DbSet<TransactionHeader> TransactionHeaders { get; set; }
     }
 }
