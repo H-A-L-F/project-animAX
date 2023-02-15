@@ -47,7 +47,7 @@
         <asp:Label ID="lbUpdateError" runat="server" Text=""></asp:Label>
 
         <br />
-        Delete Game
+        Delete Anime
        
         <br />
         <asp:Label ID="lbDeleteAnimeId" runat="server" Text="Anime ID"></asp:Label>
