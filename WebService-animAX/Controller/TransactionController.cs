@@ -55,5 +55,34 @@ namespace WebService_animAX.Controller
             TransactionHandler.InsertDetail(tid, aid, quantity);
             return Status.SUCCESS.ToString();
         }
+
+        public static List<TransactionHeader> GetHeader(string uid)
+        {
+            int intUserId = -1;
+            try
+            {
+                intUserId = int.Parse(uid);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            return TransactionHandler.GetHeader(intUserId);
+        }
+
+        public static List<TransactionDetail> GetDetail(string tid)
+        {
+            int intHeaderId = -1;
+            try
+            {
+                intHeaderId = int.Parse(tid);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            return TransactionHandler.GetDetail(intHeaderId);
+        }
     }
 }

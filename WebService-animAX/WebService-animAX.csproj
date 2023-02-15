@@ -100,10 +100,12 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Controller\AnimeController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\AnimeFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\AnimeHandler.cs" />
+    <Compile Include="Handler\TransactionHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
