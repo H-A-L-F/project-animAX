@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_animAX.Modules;
 
 namespace WebApp_animAX
 {
@@ -46,7 +47,8 @@ namespace WebApp_animAX
 
         protected void logoutBtn_Click(object sender, EventArgs e)
         {
-
+            UserSession.getInstance().Remove(Response);
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -25,6 +25,17 @@ namespace WebApp_animAX.Modules
             return instance;
         }
 
+        public void Remove(HttpResponse Response)
+        {
+            HttpCookie idCookie = new HttpCookie(uidCookies);
+            idCookie.Value = null;
+            Response.Cookies.Add(idCookie);
+
+            HttpCookie roleCookie = new HttpCookie(roleCookies);
+            roleCookie.Value = null;
+            Response.Cookies.Add(roleCookie);
+        }
+
         private void AddUserId(HttpResponse Response, User user)
         {
             HttpCookie cookie = new HttpCookie(uidCookies);
