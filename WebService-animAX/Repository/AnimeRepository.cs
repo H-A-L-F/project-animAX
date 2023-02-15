@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebService_animAX.Factory;
 
 namespace WebService_animAX.Repository
 {
@@ -32,10 +33,10 @@ namespace WebService_animAX.Repository
             return true;
         }
 
-        public static Anime Show(int gameId)
+        public static Anime Show(int id)
         {
             ServiceDatabaseEntities db = new ServiceDatabaseEntities();
-            Anime anime = (from data in db.Animes select data).Where(c => c.id == gameId).FirstOrDefault<Anime>();
+            Anime anime = (from data in db.Animes select data).Where(c => c.Id == id).FirstOrDefault<Anime>();
             return anime;
         }
 
