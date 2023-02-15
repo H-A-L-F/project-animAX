@@ -20,11 +20,11 @@ namespace WebApp_animAX.Blocs
         }
         private void SetData()
         {
-            Report.CrystalReport4 report = new Report.CrystalReport4();
+            //Report.CrystalReport4 report = new Report.CrystalReport4();
 
-            CrystalReportViewer1.ReportSource = report;
+            //CrystalReportViewer1.ReportSource = report;
             Dataset.DataSet data = GetData();
-            report.SetDataSource(data);
+            //report.SetDataSource(data);
         }
 
         private Dataset.DataSet GetData()
@@ -74,9 +74,9 @@ namespace WebApp_animAX.Blocs
                     var drow = detailTable.NewRow();
 
 
-                    drow["game_id"] = curr_detail.game_id;
-                    drow["transaction_id"] = curr_detail.transaction_id;
-                    drow["quantity"] = dict[curr_detail.game_id];
+                    drow["anime_id"] = curr_detail.anime.id;
+                    drow["transaction_id"] = curr_detail.transactionId;
+                    drow["quantity"] = curr_detail.quantity;
 
                     detailTable.Rows.Add(drow);
                 }
