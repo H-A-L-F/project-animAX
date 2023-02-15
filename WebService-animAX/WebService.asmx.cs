@@ -81,6 +81,38 @@ namespace WebService_animAX
             return serealize<List<Anime>>(gameList);
         }
 
+        [WebMethod]
+        public string showAnime(string aid)
+        {
+            Anime anime = AnimeController.Show(aid);
+            return serealize<Anime>(anime);
+        }
+
+        [WebMethod]
+        public string getUserList()
+        {
+            return serealize<List<User>>(UserController.Get());
+        }
+
+        [WebMethod]
+        public string getHeader(string userId)
+        {
+            return serealize<List<TransactionHeader>>(TransactionController.GetHeader(userId));
+        }
+
+        [WebMethod]
+        public string getDetail(string headerId)
+        {
+            return serealize<List<TransactionDetail>>(TransactionController.GetDetail(headerId));
+        }
+
+        [WebMethod]
+        public string showUser(string uid)
+        {
+            User user = UserController.Show(uid);
+            return serealize<User>(user);
+        }
+
         public string serealize<T>(T p)
         {
             return JsonConvert.SerializeObject(p, Formatting.None, new JsonSerializerSettings()

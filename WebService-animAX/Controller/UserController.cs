@@ -61,5 +61,10 @@ namespace WebService_animAX.Controller
             }
             return UserHandler.remove(temp);
         }
+
+        public static List<User> Get()
+        {
+            return UserHandler.Get();
+        }
     }
 }

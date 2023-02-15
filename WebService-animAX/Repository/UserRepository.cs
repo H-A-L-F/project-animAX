@@ -46,5 +46,19 @@ namespace WebService_animAX.Repository
             db.SaveChanges();
             return true;
         }
+
+        public static List<User> Get()
+        {
+            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
+            List<User> userList = (from data in db.Users select data).ToList<User>();
+            return userList;
+
+        }
+        public static User Show(int userId)
+        {
+            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
+            User user = (from data in db.Users select data).Where(c => c.Id == userId).FirstOrDefault<User>();
+            return user;
+        }
     }
 }
