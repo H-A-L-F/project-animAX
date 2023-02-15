@@ -49,5 +49,15 @@ namespace WebApp_animAX.Modules
             AddUserId(Response, user);
             AddUserRole(Response, user);
         }
+
+        public string GetRole(HttpRequest Request)
+        {
+
+            if (Request.Cookies[roleCookies] != null)
+            {
+                role = Request.Cookies[roleCookies].Value;
+            }
+            return role;
+        }
     }
 }
