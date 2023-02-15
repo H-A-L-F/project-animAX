@@ -7,29 +7,34 @@ namespace WebService_animAX.Controller
 {
     public class TransactionController
     {
-        public static string validation(int uid)
+        public static string validation(string uid)
         {
-            return Status.SUCCESS.ToString();
-        }
-
-        public static string create(int uid)
-        {
-
-        }
-
-        public static string createHeader(string userId)
-        {
-            int userIntId = -1;
+            int intUid;
             try
             {
-                userIntId = int.Parse(userId);
+                intUid = int.Parse(uid);
             }
             catch (Exception e)
             {
-                return "Please input a validation!";
+                return "Id invalid";
             }
 
-            TransactionHandler.InsertHeader(userIntId);
+            return Status.SUCCESS.ToString();
+        }
+
+        public static string create(string uid)
+        {
+            string status = validation(uid);
+            if (status != Status.SUCCESS.ToString())
+            {
+                return status;
+            }
+            return createHeader(int.Parse(uid));
+        }
+
+        public static string createHeader(int userId)
+        {
+            TransactionHandler.InsertHeader(userId);
             return "";
         }
 
