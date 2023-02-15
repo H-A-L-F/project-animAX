@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebService_animAX.Factory;
+using WebService_animAX.Module;
 
 namespace WebService_animAX.Repository
 {
@@ -15,7 +16,7 @@ namespace WebService_animAX.Repository
 
         public static void update(int id, string name, string price)
         {
-            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
+            ServiceDatabaseEntities db = new DatabaseModule.GetDbInstance();
             Anime anime = db.Animes.Find(id);
             if (anime == null) return;
             anime.Title = name;

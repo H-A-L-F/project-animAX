@@ -22,5 +22,29 @@ namespace WebService_animAX.Repository
         {
             UserFactory.Create(username, password, role);
         }
+
+        public static void update(int id, string username, string role, string password)
+        {
+            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
+
+            User user = db.Users.Find(id);
+            if (user == null) return;
+
+            user.Username = username;
+            user.Role = role;
+            user.Password = password;
+
+            db.SaveChanges();
+        }
+
+        public static bool remove(int id)
+        {
+            ServiceDatabaseEntities db = new ServiceDatabaseEntities();
+            User user = db.Users.Find(id);
+            if (user == null) return false;
+            db.Users.Remove(user);
+            db.SaveChanges();
+            return true;
+        }
     }
 }
