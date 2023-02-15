@@ -10,12 +10,8 @@
         <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
-        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
         <br />
         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-        <br />
-
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
     </div>
 </asp:Content>
