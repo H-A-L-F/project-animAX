@@ -45,10 +45,10 @@ namespace WebService_animAX.Repository
             ServiceDatabaseEntities db = new ServiceDatabaseEntities();
 
             Anime anime = (from data in db.Animes select data).FirstOrDefault();
-            System.Diagnostics.Debug.WriteLine("First Anime : ", anime.Title);
+            //System.Diagnostics.Debug.WriteLine("First Anime : ", anime.Title);
             List<Anime> aniList = (from data in db.Animes select data).ToList<Anime>();
 
-            System.Diagnostics.Debug.WriteLine("Anime List From Repository : ", aniList[0]);
+            //System.Diagnostics.Debug.WriteLine("Anime List From Repository : ", aniList[0]);
             return aniList;
         }
     }
